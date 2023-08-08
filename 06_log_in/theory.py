@@ -3,7 +3,9 @@
 Admin and Authentication
 Log In
 
-After a user object is created, they can use those credentials to log in to gain access to the site. In order to log in a user, we can make use of the login() function provided by Django:
+After a user object is created, they can use those credentials to log in to gain access to the site.
+In order to log in a user, we can make use of the login() function provided by Django:
+"""
 
 # views.py
 From django.contrib.auth import login
@@ -12,12 +14,19 @@ def login_view(request):
   # ... Other code
   login(request, user)
 
+"""
+In order to make use of login(), we must first import it from django.contrib.auth.
+The function takes in a request object followed by a user object. If a user is successfully logged in, a session will be created.
+But what exactly is a session?
 
-In order to make use of login(), we must first import it from django.contrib.auth. The function takes in a request object followed by a user object. If a user is successfully logged in, a session will be created. But what exactly is a session?
-
-In Django, once the user has been logged in to their account, and until they log out on that device, they are having a session. With Django’s session framework, sessions are used to abstract the receiving and sending of cookies. While data is saved on the server-side, the session created uses a cookie containing a special session id to identify each browser and its associated session with the site. This allows us to keep track of the user as they navigate around the site without constantly needing them to log in.
+In Django, once the user has been logged in to their account, and until they log out on that device, they are having a session.
+With Django’s session framework, sessions are used to abstract the receiving and sending of cookies.
+==> https://en.wikipedia.org/wiki/HTTP_cookie
+While data is saved on the server-side, the session created uses a cookie containing a special session id to identify each browser and its associated session with the site.
+This allows us to keep track of the user as they navigate around the site without constantly needing them to log in.
 
 Using our example from the previous lesson, we can see what the proper flow is of logging in a user:
+# """
 
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect
@@ -38,7 +47,7 @@ def login_view(request):
   else:
     render(request, "registration/login.html", context)
 
-
+"""
 The main difference is that in our if statement, we’re now able to create a session by calling login() using request and our created user object.
 Instructions
 1.
@@ -46,6 +55,7 @@ Instructions
 Our code block to sign in users is currently incomplete, add the login() function in order to log in a user after they’re authenticated.
 
 Make sure to add login() within your if statement:
+"""
 
 # Other login_view code...
   if user is not None:
@@ -54,7 +64,7 @@ Make sure to add login() within your if statement:
   else:
     render(request, "registration/login.html", context)
 
-
+    """
 2.
 
 In the mini-browser, navigate to account/login and attempt to log in with valid credentials:
