@@ -1,0 +1,16 @@
+Skip to Content
+My Home
+Django's Accounts for Admins and Users
+
+What hasn’t Django thought of? Learn how Django lets you create users and admins and implements a signup and login process.
+
+You’ve set up your site for your users but what about those who need to maintain the site?
+You have to think about the super users who need extra permissions to protect your site and make sure it’s running smoothly!
+
+Well, Django’s thought about this too and offers you the ability to create an admin account and access through the /admin route.
+As an admin, you can perform all CRUD functionalities on your data!
+
+Additionally, to safeguard your site, you might want users to make their own accounts.
+Authenticating users gives you the peace of mind that actual users are interacting with your site.
+
+Let’s see how Django provides these core components for us.
