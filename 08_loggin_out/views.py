@@ -7,10 +7,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Owner, Patient
 from .forms import OwnerCreateForm, OwnerUpdateForm, PatientCreateForm, PatientUpdateForm
 # Import logout below:
-
+from django.contrib.auth import logout
 
 # Add your logout function below:
-
+def logout_view(request):
+  logout(request)
+  return redirect("home")
 
 @login_required
 def home(request):
