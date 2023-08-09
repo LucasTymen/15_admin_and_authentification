@@ -16,7 +16,7 @@ def login_view(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
       # Add your code below:
-
+      login(request, user)
       return redirect("home")
     else:
       return HttpResponse("invalid credentials")
