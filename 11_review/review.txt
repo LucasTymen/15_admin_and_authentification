@@ -1,0 +1,30 @@
+Admin and Authentication
+Review
+
+Great job! We’ve covered a lot throughout this lesson!
+So far, we’ve taken a look at a number of built-in functions that Django provides for us straight out of the box.
+Not only that but we saw how powerful the admin interface can be in order to manage our users and any other records stored in our database.
+Let’s rehash once again what we’ve learned so far:
+
+    The admin interface is accessible through the route /admin
+
+    We need to register our models to our admin.py file to access them as admin.
+
+    We can create a new superuser in the terminal using the createsuperuser command.
+
+    The User object can be used in order to create new users programmatically through the shell.
+
+    Authenticating users can be done by passing in a User object into the built-in function, authenticate().
+
+    Django provides an easier and built-in way to login and authenticate users using mixins and decorators.
+
+    Logging out a user can be done by calling the logout() function. This will terminate the session created when the user logged in, and successfully log them out.
+
+    With the UserCreationForm function, we can automatically create a form that takes in a username and a password and pass that form into a view page in order to register new users.
+
+Keep in mind that although we’ve looked into various functions and utilities that Django comes with straight out of the box, there’s still plenty of other methods to explore.
+If you’re curious about what other functions are available, refer to Django’s documentation!
+==> https://docs.djangoproject.com/en/4.1/
+
+Community Forums
+Still have questions? View this exercise's thread in the Codecademy Forums.
