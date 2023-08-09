@@ -11,7 +11,9 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Complete your SignUp view below:
 class SignUp(CreateView):
-
+  form_class = UserCreationForm
+  success_url = reverse_lazy("login")
+  template_name = "registration/signup.html"
 
 @login_required
 def home(request):

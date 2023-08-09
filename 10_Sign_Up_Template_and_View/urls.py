@@ -6,7 +6,7 @@ urlpatterns = [
   path("", views.home, name="home"),
   path("account/", include("django.contrib.auth.urls"), name="login"),
   # Add your signup path below:
-
+  path("signup/", views.SignUp.as_view(), name = "signup"),
   path("owner/list", views.OwnerList.as_view(), name="ownerlist"),
   path("owner/create", views.OwnerCreate.as_view(), name="ownercreate"),
   path("owner/update/<pk>", views.OwnerUpdate.as_view(), name="ownerupdate"),
